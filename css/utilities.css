@@ -21,7 +21,9 @@
     0.75px
 
 --- 02 COLORS
-    - primary : #e67e22
+    - primary : 
+    #e67e22
+    #eb984e
     - tints : 
     #fdf2e9;
     #fae5d3;
@@ -33,6 +35,7 @@
     #333
 
 --- 03 SHADOWS
+    0 3.2rem 6.4rem rgba(0, 0, 0, 0.075);
 
 --- 04 BORDER-RADIUS
     default : 9px

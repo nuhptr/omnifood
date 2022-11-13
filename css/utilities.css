@@ -116,16 +116,21 @@
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
 
   font-size: 2rem;
   font-weight: 600;
-  color: #fff;
   padding: 1.6rem 3.2rem;
   text-decoration: none;
   border-radius: 9px;
+
+  /* Only neccesary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 
   transition: all 0.3s;
 }
@@ -153,6 +158,13 @@
 
   /* border: 3px solid #fff; */
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: flex-end;
+  padding: 1.2rem;
 }
 
 .link:link,

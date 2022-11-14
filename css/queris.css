@@ -1,0 +1,9 @@
+/* rem and em do not depend on html font size
+on media queries!, instead 1rem = 1em = 16px */
+
+/* BELLOW 1344px (Smaller Desktop) */
+@media (max-width: 84em) {
+    .hero {
+        max-width: 120rem;
+    }
+}

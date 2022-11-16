@@ -1,7 +1,17 @@
-console.log("Hello World");
-
+// Set Year
 const year = document.querySelector(".year");
 year.textContent = new Date().getUTCFullYear();
+
+// Make mobile Navigation Work ("nav-open");
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
+// Smooth Scrooling
+
 ///////////////////////////
 // Fixing flexbox gap property missing in some safari versions
 function checkFlexGap() {

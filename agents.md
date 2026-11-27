@@ -2,11 +2,13 @@
 
 ## 1. Project Architecture
 
-All application source code lives inside `/app`. The repository root is reserved for project configuration and documentation (`.prettierrc`, `.prettierignore`, `agents.md`, `readme.md`, `content.md`, `license`).
+All application source code lives inside `/app`. The repository root is reserved for project configuration and documentation (`package.json`, `vite.config.js`, `.prettierrc`, `.prettierignore`, `.gitignore`, `agents.md`, `readme.md`, `content.md`, `license`).
+
+Vite (`root: "app"`) with `vite-plugin-html-inject` compiles `<load src="./sections/*.html" />` partials at dev/build time so no client-side HTML loader JavaScript is needed.
 
 ```text
 app/
-├── index.html                  # Document shell & section mount slots
+├── index.html                  # Document shell using <load src="./sections/*.html" />
 ├── sections/                   # Modular HTML partials, one file per section
 │   ├── header.html
 │   ├── hero.html
@@ -23,13 +25,11 @@ app/
 │   ├── base.css                # Scoped resets (no global *), typography, containers
 │   ├── components.css          # Reusable BEM UI primitives
 │   └── sections/               # One stylesheet per section
-├── scripts/                    # Native ES Modules split by responsibility
-│   ├── main.js                 # App entry point (mounts sections, boots modules)
-│   ├── loader.js               # Parallel HTML partial loader
-│   ├── navigation.js           # Mobile nav drawer, sticky header, smooth scroll
+├── scripts/                    # Minimal native ES Modules split by responsibility
+│   ├── main.js                 # App entry point & dynamic copyright year
+│   ├── navigation.js           # Mobile nav drawer & sticky header observer
 │   ├── meals-filter.js         # Diet category filtering in Meals section
-│   ├── cta-form.js             # Signup form validation & submission feedback
-│   └── footer.js               # Dynamic copyright year
+│   └── cta-form.js             # Signup form validation & submission feedback
 └── assets/
     └── img/                    # Organized by section under assets location
         ├── brand/
@@ -59,7 +59,7 @@ app/
 
 ## 3. HTML Conventions
 
-- Split markup into `/app/sections/<section>.html` partials and mount them via `data-section` slots in `/app/index.html`.
+- Split markup into `/app/sections/<section>.html` partials and compose them in `/app/index.html` using `<load src="./sections/<section>.html" />` (processed by `vite-plugin-html-inject`).
 - Use semantic landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<aside>`, `<footer>`) and maintain a single `<h1>` per page with sequential heading levels (`<h2>`, `<h3>`).
 - Use `<button type="button">` for non-submit interactive controls and `<a>` strictly for navigation.
 - Prioritize LCP by adding `fetchpriority="high"` (never `loading="lazy"`) on the hero image; apply `loading="lazy"` and explicit `width`/`height` attributes to off-screen images.
@@ -94,9 +94,9 @@ app/
 
 ## 5. JavaScript Conventions
 
+- Keep JavaScript minimal: use HTML/CSS for static composition and smooth scrolling, reserving JS for genuine interactivity.
 - Use native ES Modules (`type="module"`) split by concern inside `/app/scripts/`.
 - Never use inline event handlers (`onclick`, etc.); always bind via `addEventListener()`.
-- Wait for HTML section partials to mount via `loadSections()` before querying section DOM nodes.
 
 ## 6. Assets Organization
 

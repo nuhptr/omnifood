@@ -10,12 +10,14 @@ export function initNavigation() {
         toggleBtn?.setAttribute("aria-expanded", "false")
     }
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-            const isOpen = header.classList.toggle("site-header--open")
-            toggleBtn.setAttribute("aria-expanded", String(isOpen))
-        })
-    }
+    toggleBtn?.addEventListener("click", () => {
+        const isOpen = header.classList.toggle("site-header--open")
+        toggleBtn.setAttribute("aria-expanded", String(isOpen))
+    })
+
+    header.addEventListener("click", (event) => {
+        if (event.target.closest('a[href^="#"]')) closeMenu()
+    })
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && header.classList.contains("site-header--open")) {
@@ -24,46 +26,12 @@ export function initNavigation() {
         }
     })
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-
-    document.addEventListener("click", (event) => {
-        const link = event.target.closest('a[href^="#"]')
-        if (!link) return
-
-        const href = link.getAttribute("href")
-        if (!href) return
-
-        if (href === "#" || href === "#top") {
-            event.preventDefault()
-            window.scrollTo({
-                top: 0,
-                behavior: prefersReducedMotion ? "auto" : "smooth",
-            })
-            closeMenu()
-            return
-        }
-
-        const target = document.querySelector(href)
-        if (target) {
-            event.preventDefault()
-            target.scrollIntoView({
-                behavior: prefersReducedMotion ? "auto" : "smooth",
-            })
-            closeMenu()
-        }
-    })
-
     if (heroSection && "IntersectionObserver" in window) {
         const observer = new IntersectionObserver(
-            (entries) => {
-                const [entry] = entries
+            ([entry]) => {
                 document.body.classList.toggle("page--sticky", !entry.isIntersecting)
             },
-            {
-                root: null,
-                threshold: 0,
-                rootMargin: "-80px 0px 0px 0px",
-            }
+            { threshold: 0, rootMargin: "-80px 0px 0px 0px" }
         )
 
         observer.observe(heroSection)

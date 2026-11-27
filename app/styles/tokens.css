@@ -39,7 +39,7 @@
         --container-pad: clamp(1.6rem, 3vw, 4rem);
         --header-height: 6.4rem;
 
-        /* Radii & Motion */
+        /* Radius & Motion */
         --radius-sharp: 0px;
         --radius-subtle: 2px;
         --radius-pill: 999px;

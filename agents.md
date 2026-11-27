@@ -4,27 +4,26 @@
 
 All application source code lives inside `/app`. The repository root is reserved for project configuration and documentation (`package.json`, `vite.config.js`, `.prettierrc`, `.prettierignore`, `.gitignore`, `agents.md`, `readme.md`, `content.md`, `license`).
 
-Vite (`root: "app"`) with `vite-plugin-html-inject` compiles `<load src="./sections/*.html" />` partials at dev/build time so no client-side HTML loader JavaScript is needed.
+Vite (`root: "app"`) with `vite-plugin-html-inject` compiles `<load src="./sections/<section>/<section>.html" />` partials at dev/build time so no client-side HTML loader JavaScript is needed.
 
 ```text
 app/
-├── index.html                  # Document shell using <load src="./sections/*.html" />
-├── sections/                   # Modular HTML partials, one file per section
-│   ├── header.html
-│   ├── hero.html
-│   ├── featured.html
-│   ├── how.html
-│   ├── meals.html
-│   ├── testimonials.html
-│   ├── pricing.html
-│   ├── cta.html
-│   └── footer.html
-├── styles/                     # W3C native CSS Nesting + BEM + @layer
-│   ├── main.css                # Cascade layer order & imports
+├── index.html                  # Document shell using <load src="./sections/<section>/<section>.html" />
+├── sections/                   # Co-located HTML + CSS per section
+│   ├── header/                 # header.html + header.css
+│   ├── hero/                   # hero.html + hero.css
+│   ├── featured/               # featured.html + featured.css
+│   ├── how/                    # how.html + how.css
+│   ├── meals/                  # meals.html + meals.css
+│   ├── testimonials/           # testimonials.html + testimonials.css
+│   ├── pricing/                # pricing.html + pricing.css
+│   ├── cta/                    # cta.html + cta.css
+│   └── footer/                 # footer.html + footer.css
+├── styles/                     # Global W3C native CSS Nesting + BEM + @layer
+│   ├── main.css                # Cascade layer order & imports (global + section styles)
 │   ├── tokens.css              # :root design tokens
 │   ├── base.css                # Scoped resets (no global *), typography, containers
-│   ├── components.css          # Reusable BEM UI primitives
-│   └── sections/               # One stylesheet per section
+│   └── components.css          # Reusable BEM UI primitives
 ├── scripts/                    # Minimal native ES Modules split by responsibility
 │   ├── main.js                 # App entry point & dynamic copyright year
 │   ├── navigation.js           # Mobile nav drawer & sticky header observer
@@ -59,7 +58,7 @@ app/
 
 ## 3. HTML Conventions
 
-- Split markup into `/app/sections/<section>.html` partials and compose them in `/app/index.html` using `<load src="./sections/<section>.html" />` (processed by `vite-plugin-html-inject`).
+- Co-locate each section's markup and stylesheet inside `/app/sections/<section>/` (`<section>.html` + `<section>.css`) and compose them in `/app/index.html` using `<load src="./sections/<section>/<section>.html" />` (processed by `vite-plugin-html-inject`).
 - Use semantic landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<aside>`, `<footer>`) and maintain a single `<h1>` per page with sequential heading levels (`<h2>`, `<h3>`).
 - Use `<button type="button">` for non-submit interactive controls and `<a>` strictly for navigation.
 - Prioritize LCP by adding `fetchpriority="high"` (never `loading="lazy"`) on the hero image; apply `loading="lazy"` and explicit `width`/`height` attributes to off-screen images.

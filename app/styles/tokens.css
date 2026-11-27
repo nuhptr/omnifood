@@ -1,0 +1,49 @@
+@layer tokens {
+    :root {
+        /* Palette */
+        --color-accent: #f24e1e;
+        --color-accent-deep: #c93810;
+        --color-accent-soft: #ff6b3d;
+        --color-ink: #0d0d0d;
+        --color-ink-soft: #222222;
+        --color-muted: #666666;
+        --color-muted-light: #999999;
+        --color-surface: #ffffff;
+        --color-canvas: #f6f5f2;
+        --color-studio: #efeeea;
+        --color-border: rgba(13, 13, 13, 0.12);
+        --color-border-strong: rgba(13, 13, 13, 0.28);
+        --color-grid-light: rgba(255, 255, 255, 0.26);
+
+        /* Diet Swatch Colors */
+        --color-diet-vegetarian: #2f9e44;
+        --color-diet-vegan: #74b816;
+        --color-diet-paleo: #f08c00;
+
+        /* Typography */
+        --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+        --font-body: "Inter", system-ui, -apple-system, sans-serif;
+        --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+        /* Spacing */
+        --space-2xs: 0.4rem;
+        --space-xs: 0.8rem;
+        --space-sm: 1.2rem;
+        --space-md: 2rem;
+        --space-lg: 3.2rem;
+        --space-xl: 5.6rem;
+        --space-2xl: 8rem;
+
+        /* Layout */
+        --container-max: 132rem;
+        --container-pad: clamp(1.6rem, 3vw, 4rem);
+        --header-height: 6.4rem;
+
+        /* Radii & Motion */
+        --radius-sharp: 0px;
+        --radius-subtle: 2px;
+        --radius-pill: 999px;
+        --transition-fast: 180ms ease;
+        --transition-base: 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+}

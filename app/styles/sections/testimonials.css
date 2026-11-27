@@ -1,0 +1,166 @@
+@layer sections {
+    .testimonials {
+        background-color: var(--color-surface);
+
+        & .testimonials__banner {
+            background:
+                linear-gradient(180deg, #0d0d0d 0%, #1d100a 48%, #c93810 86%, var(--color-accent) 100%);
+            color: var(--color-surface);
+            padding-block: var(--space-xl);
+        }
+
+        & .testimonials__banner-inner {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        & .testimonials__banner-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            opacity: 0.76;
+        }
+
+        & .testimonials__banner-stage {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        & .testimonials__banner-display {
+            font-family: var(--font-display);
+            font-size: clamp(5.2rem, 9.5vw, 11.2rem);
+            font-weight: 800;
+            line-height: 0.88;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        & .testimonials__banner-code {
+            font-family: var(--font-display);
+            font-size: clamp(4.8rem, 7vw, 8.8rem);
+            font-weight: 600;
+            line-height: 0.9;
+            opacity: 0.92;
+        }
+
+        & .testimonials__banner-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            padding-block-start: var(--space-md);
+            border-top: 1px solid var(--color-grid-light);
+        }
+
+        & .testimonials__banner-copy {
+            max-inline-size: 46ch;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        & .testimonials__body {
+            padding-block: var(--space-2xl);
+        }
+
+        & .testimonials__split {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: var(--space-lg);
+            align-items: start;
+        }
+
+        & .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-md);
+        }
+
+        @media (max-width: 64em) {
+            & .testimonials__split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 38em) {
+            & .testimonials__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .testimonial-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        padding: var(--space-lg);
+        background-color: var(--color-canvas);
+        border: 1px solid var(--color-border);
+
+        & .testimonial-card__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-sm);
+        }
+
+        & .testimonial-card__avatar {
+            inline-size: 4.8rem;
+            block-size: 4.8rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        & .testimonial-card__quote {
+            font-size: 1.55rem;
+            line-height: 1.65;
+            color: var(--color-ink-soft);
+        }
+
+        & .testimonial-card__author {
+            margin-block-start: auto;
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--color-muted);
+        }
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+
+        & .gallery__item {
+            aspect-ratio: 1;
+            overflow: clip;
+            background-color: var(--color-studio);
+        }
+
+        & .gallery__image {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-base);
+
+            &:hover {
+                transform: scale(1.08);
+            }
+        }
+
+        @media (max-width: 64em) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        @media (max-width: 38em) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}

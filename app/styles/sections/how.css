@@ -1,0 +1,97 @@
+@layer sections {
+    .how {
+        background-color: var(--color-canvas);
+        padding-block: var(--space-2xl);
+        border-bottom: 1px solid var(--color-border);
+
+        & .how__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        & .how__step {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: center;
+            gap: var(--space-xl);
+            padding-block-end: var(--space-xl);
+            border-bottom: 1px solid var(--color-border);
+
+            &:last-child {
+                padding-block-end: 0;
+                border-bottom: none;
+            }
+        }
+
+        & .how__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        & .how__number {
+            font-family: var(--font-display);
+            font-size: clamp(6.4rem, 8vw, 9.6rem);
+            font-weight: 800;
+            line-height: 0.85;
+            color: var(--color-accent);
+        }
+
+        & .how__title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 3.6vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            color: var(--color-ink);
+        }
+
+        & .how__description {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            color: var(--color-muted);
+            max-inline-size: 52ch;
+        }
+
+        & .how__media {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+            background-color: var(--color-studio);
+            border: 1px solid var(--color-border);
+
+            &::before {
+                content: "";
+                position: absolute;
+                inline-size: 62%;
+                aspect-ratio: 1;
+                border: 1px solid var(--color-border-strong);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+        }
+
+        & .how__image {
+            position: relative;
+            z-index: 1;
+            inline-size: min(44%, 22rem);
+            filter: drop-shadow(0 2rem 3.2rem rgba(13, 13, 13, 0.16));
+        }
+
+        @media (max-width: 52em) {
+            & .how__step {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+
+                &.how__step--reverse {
+                    & .how__media {
+                        order: 2;
+                    }
+                }
+            }
+        }
+    }
+}

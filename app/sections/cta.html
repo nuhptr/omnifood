@@ -1,0 +1,73 @@
+<section class="cta" id="cta" aria-labelledby="cta-heading">
+    <div class="container">
+        <div class="cta__box">
+            <div class="cta__content">
+                <span class="meta-label">[06] / COMPLIMENTARY TRIAL</span>
+                <h2 class="cta__title" id="cta-heading">GET YOUR FIRST MEAL FOR FREE.</h2>
+                <p class="cta__description">
+                    Healthy, tasty and hassle-free meals are waiting for you. Start eating well
+                    today. You can cancel or pause anytime. And the first meal is on us.
+                </p>
+
+                <form class="cta__form" id="cta-signup-form" novalidate>
+                    <div class="cta__field">
+                        <label class="cta__label" for="full-name">FULL NAME</label>
+                        <input
+                            class="cta__input"
+                            id="full-name"
+                            name="fullName"
+                            type="text"
+                            placeholder="John Smith"
+                            autocomplete="name"
+                            required />
+                    </div>
+
+                    <div class="cta__field">
+                        <label class="cta__label" for="email">EMAIL ADDRESS</label>
+                        <input
+                            class="cta__input"
+                            id="email"
+                            name="email"
+                            type="email"
+                            inputmode="email"
+                            placeholder="me@example.com"
+                            autocomplete="email"
+                            required />
+                    </div>
+
+                    <div class="cta__field">
+                        <label class="cta__label" for="select-where">
+                            WHERE DID YOU HEAR FROM US?
+                        </label>
+                        <select class="cta__select" id="select-where" name="source" required>
+                            <option value="">Please choose one option:</option>
+                            <option value="friends">Friends and family</option>
+                            <option value="youtube">YouTube video</option>
+                            <option value="podcast">Podcast</option>
+                            <option value="ad">Social media ad</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="cta__field cta__field--submit">
+                        <button type="submit" class="button button--ink cta__submit">
+                            SIGN UP NOW &rarr;
+                        </button>
+                    </div>
+                </form>
+
+                <p class="cta__status" id="cta-form-status" role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="cta__media">
+                <img
+                    class="cta__image"
+                    src="./assets/img/cta/eating.jpg"
+                    alt="Woman enjoying a healthy Omnifood meal"
+                    width="640"
+                    height="720"
+                    loading="lazy" />
+            </div>
+        </div>
+    </div>
+</section>

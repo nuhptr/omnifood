@@ -1,0 +1,14 @@
+@layer reset, tokens, base, components, sections, utilities;
+
+@import url("./tokens.css");
+@import url("./base.css");
+@import url("./components.css");
+@import url("./sections/header.css");
+@import url("./sections/hero.css");
+@import url("./sections/featured.css");
+@import url("./sections/how.css");
+@import url("./sections/meals.css");
+@import url("./sections/testimonials.css");
+@import url("./sections/pricing.css");
+@import url("./sections/cta.css");
+@import url("./sections/footer.css");

@@ -1,0 +1,114 @@
+<section class="meals" id="meals" aria-labelledby="meals-heading">
+    <div class="container">
+        <div class="section-head section-head--center">
+            <span class="meta-label meta-label--muted">[03] / THE LATEST EDIT</span>
+            <h2 class="section-head__title" id="meals-heading">FRESH IN. FAR OUT.</h2>
+            <p class="section-head__subcopy">
+                OMNIFOOD AI CHOOSES FROM 5,000+ RECIPES &nbsp;/&nbsp;
+                <a class="section-head__link" href="#cta">SEE ALL RECIPES &rarr;</a>
+            </p>
+        </div>
+
+        <div class="meals__filters" role="tablist" aria-label="Filter meals by diet">
+            <button
+                type="button"
+                class="meals__filter meals__filter--active"
+                role="tab"
+                aria-selected="true"
+                data-filter="all">
+                ALL MEALS (2)
+            </button>
+            <button
+                type="button"
+                class="meals__filter"
+                role="tab"
+                aria-selected="false"
+                data-filter="vegetarian">
+                VEGETARIAN
+            </button>
+            <button
+                type="button"
+                class="meals__filter"
+                role="tab"
+                aria-selected="false"
+                data-filter="vegan">
+                VEGAN
+            </button>
+            <button
+                type="button"
+                class="meals__filter"
+                role="tab"
+                aria-selected="false"
+                data-filter="paleo">
+                PALEO
+            </button>
+        </div>
+
+        <div class="meals__grid">
+            <article class="meal-card" data-diet="vegetarian">
+                <div class="meal-card__media">
+                    <img
+                        class="meal-card__image"
+                        src="./assets/img/meals/meal-1.jpg"
+                        alt="Japanese Gyozas served fresh"
+                        width="700"
+                        height="467"
+                        loading="lazy" />
+                </div>
+                <div class="meal-card__body">
+                    <div class="meal-card__header">
+                        <h3 class="meal-card__title">Japanese Gyozas</h3>
+                        <span class="meal-card__calories">650 KCAL</span>
+                    </div>
+                    <p class="meal-card__meta">NUTRISCORE&reg; 74 &nbsp;/&nbsp; 4.9 RATING (537)</p>
+                    <div class="meal-card__swatches">
+                        <span class="meal-card__dot meal-card__dot--vegetarian" aria-hidden="true"></span>
+                        <span class="meal-card__tag-label">VEGETARIAN</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="meal-card" data-diet="vegan paleo">
+                <div class="meal-card__media">
+                    <img
+                        class="meal-card__image"
+                        src="./assets/img/meals/meal-2.jpg"
+                        alt="Avocado Salad with fresh greens"
+                        width="700"
+                        height="467"
+                        loading="lazy" />
+                </div>
+                <div class="meal-card__body">
+                    <div class="meal-card__header">
+                        <h3 class="meal-card__title">Avocado Salad</h3>
+                        <span class="meal-card__calories">400 KCAL</span>
+                    </div>
+                    <p class="meal-card__meta">NUTRISCORE&reg; 92 &nbsp;/&nbsp; 4.8 RATING (441)</p>
+                    <div class="meal-card__swatches">
+                        <span class="meal-card__dot meal-card__dot--vegan" aria-hidden="true"></span>
+                        <span class="meal-card__dot meal-card__dot--paleo" aria-hidden="true"></span>
+                        <span class="meal-card__tag-label">VEGAN &bull; PALEO</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="meal-card meal-card--diets" data-diet="vegetarian vegan paleo">
+                <div class="meal-card__diets-inner">
+                    <span class="meta-label meta-label--accent">[09] / SUPPORTED SYSTEMS</span>
+                    <h3 class="meal-card__diets-title">WORKS WITH ANY DIET</h3>
+                    <ul class="meals__diet-list">
+                        <li class="meals__diet-item">01 / VEGETARIAN</li>
+                        <li class="meals__diet-item">02 / VEGAN</li>
+                        <li class="meals__diet-item">03 / PESCATARIAN</li>
+                        <li class="meals__diet-item">04 / GLUTEN-FREE</li>
+                        <li class="meals__diet-item">05 / LACTOSE-FREE</li>
+                        <li class="meals__diet-item">06 / KETO</li>
+                        <li class="meals__diet-item">07 / PALEO</li>
+                        <li class="meals__diet-item">08 / LOW FODMAP</li>
+                        <li class="meals__diet-item">09 / KID-FRIENDLY</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

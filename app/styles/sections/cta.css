@@ -1,0 +1,129 @@
+@layer sections {
+    .cta {
+        background-color: var(--color-surface);
+        padding-block: var(--space-2xl);
+
+        & .cta__box {
+            display: grid;
+            grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.95fr);
+            background-color: var(--color-accent);
+            color: var(--color-surface);
+            border: 1px solid var(--color-ink);
+            overflow: clip;
+        }
+
+        & .cta__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            padding: clamp(2.8rem, 4.5vw, 5.6rem);
+        }
+
+        & .cta__title {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 5.5vw, 6.4rem);
+            font-weight: 800;
+            line-height: 0.92;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        & .cta__description {
+            font-size: 1.6rem;
+            line-height: 1.65;
+            max-inline-size: 54ch;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        & .cta__form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-md);
+            margin-block-start: var(--space-sm);
+        }
+
+        & .cta__field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            &.cta__field--submit {
+                justify-content: flex-end;
+            }
+        }
+
+        & .cta__label {
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        & .cta__input,
+        & .cta__select {
+            inline-size: 100%;
+            padding-block: 1.3rem;
+            padding-inline: 1.4rem;
+            background-color: var(--color-surface);
+            color: var(--color-ink);
+            border: 1px solid var(--color-ink);
+            border-radius: var(--radius-sharp);
+            font-size: 1.5rem;
+
+            &::placeholder {
+                color: var(--color-muted-light);
+            }
+        }
+
+        & .cta__submit {
+            inline-size: 100%;
+            padding-block: 1.45rem;
+        }
+
+        & .cta__status {
+            min-block-size: 2rem;
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            letter-spacing: 0.04em;
+
+            &.cta__status--success {
+                color: var(--color-surface);
+            }
+
+            &.cta__status--error {
+                color: var(--color-ink);
+                font-weight: 600;
+            }
+        }
+
+        & .cta__media {
+            position: relative;
+            background-color: var(--color-ink);
+        }
+
+        & .cta__image {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+            opacity: 0.88;
+        }
+
+        @media (max-width: 58em) {
+            & .cta__box {
+                grid-template-columns: 1fr;
+            }
+
+            & .cta__media {
+                order: -1;
+                max-block-size: 34rem;
+            }
+        }
+
+        @media (max-width: 38em) {
+            & .cta__form {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

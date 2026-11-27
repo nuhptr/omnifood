@@ -1,0 +1,151 @@
+@layer sections {
+    .featured {
+        background-color: var(--color-surface);
+        padding-block-start: var(--space-2xl);
+
+        & .featured__manifesto {
+            display: grid;
+            grid-template-columns: minmax(22rem, 0.36fr) minmax(0, 1fr);
+            gap: var(--space-xl);
+            align-items: start;
+            padding-block-end: var(--space-xl);
+        }
+
+        & .featured__meta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        & .featured__coords {
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            letter-spacing: 0.06em;
+            color: var(--color-muted-light);
+        }
+
+        & .featured__statement {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 4.4vw, 5.2rem);
+            font-weight: 700;
+            line-height: 1.04;
+            letter-spacing: -0.015em;
+            text-transform: uppercase;
+            color: var(--color-ink);
+        }
+
+        & .featured__pillars {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            padding-block: var(--space-md);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        & .featured__pillar {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-ink);
+        }
+
+        & .featured__pillar-link {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        & .featured__logos-wrap {
+            padding-block: var(--space-lg);
+        }
+
+        & .featured__logos-label {
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+            text-align: center;
+            margin-block-end: var(--space-md);
+        }
+
+        & .featured__logos {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            gap: var(--space-lg);
+        }
+
+        & .featured__logo {
+            block-size: 2.6rem;
+            inline-size: auto;
+            filter: brightness(0);
+            opacity: 0.42;
+            transition: opacity var(--transition-fast);
+
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+
+        & .featured__ticker {
+            background-color: var(--color-ink);
+            color: var(--color-surface);
+            padding-block: 1.6rem;
+            margin-block-start: var(--space-sm);
+        }
+
+        & .featured__ticker-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        & .featured__ticker-plus {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        & .featured__badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding-block: 0.6rem;
+            padding-inline: 2rem;
+            background-color: var(--color-accent);
+            color: var(--color-surface);
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            border-radius: var(--radius-pill);
+        }
+
+        @media (max-width: 56em) {
+            & .featured__manifesto {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+        }
+    }
+}

@@ -3,8 +3,13 @@
         background-color: var(--color-surface);
 
         & .testimonials__banner {
-            background:
-                linear-gradient(180deg, #0d0d0d 0%, #1d100a 48%, #c93810 86%, var(--color-accent) 100%);
+            background: linear-gradient(
+                180deg,
+                #0d0d0d 0%,
+                #1d100a 48%,
+                #c93810 86%,
+                var(--color-accent) 100%
+            );
             color: var(--color-surface);
             padding-block: var(--space-xl);
         }

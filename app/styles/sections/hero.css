@@ -1,8 +1,12 @@
 @layer sections {
     .hero {
         position: relative;
-        background:
-            radial-gradient(circle at 60% 24%, #ff6336 0%, var(--color-accent) 46%, #d93b12 100%);
+        background: radial-gradient(
+            circle at 60% 24%,
+            #ff6336 0%,
+            var(--color-accent) 46%,
+            #d93b12 100%
+        );
         color: var(--color-surface);
         padding-block: 2rem 4rem;
         overflow: clip;
@@ -17,8 +21,18 @@
                 position: absolute;
                 inset: 0;
                 background-image:
-                    linear-gradient(to right, transparent calc(50% - 0.5px), var(--color-grid-light) 50%, transparent calc(50% + 0.5px)),
-                    linear-gradient(to bottom, transparent calc(48% - 0.5px), var(--color-grid-light) 48%, transparent calc(48% + 0.5px));
+                    linear-gradient(
+                        to right,
+                        transparent calc(50% - 0.5px),
+                        var(--color-grid-light) 50%,
+                        transparent calc(50% + 0.5px)
+                    ),
+                    linear-gradient(
+                        to bottom,
+                        transparent calc(48% - 0.5px),
+                        var(--color-grid-light) 48%,
+                        transparent calc(48% + 0.5px)
+                    );
             }
 
             &::after {

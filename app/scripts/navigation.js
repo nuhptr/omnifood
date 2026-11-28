@@ -31,7 +31,7 @@ export function initNavigation() {
             ([entry]) => {
                 document.body.classList.toggle("page--sticky", !entry.isIntersecting)
             },
-            { threshold: 0, rootMargin: "-80px 0px 0px 0px" }
+            { threshold: 0, rootMargin: "-80px 0px 0px 0px" },
         )
 
         observer.observe(heroSection)
